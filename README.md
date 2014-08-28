@@ -8,3 +8,16 @@ Prioritize lists together in real time.
 4. Your collaborators go to the link on any device
 5. They put their name in and start rating items one by one
 6. You see results in real time on your screen
+
+## Technology stack
+* meteor
+* bootstrap
+
+## Meteor Packages used:
+* autopublish
+* standard-app-packages
+* insecure
+* mrt:bootstrap-3
+* accounts-password
+* iron:router
+* mrt:accounts-ui-bootstrap-3
