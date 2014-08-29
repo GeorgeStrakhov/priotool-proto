@@ -1,0 +1,10 @@
+<template name="displaylist">
+  <h1>{{list.name}}</h1>
+  <h4>{{list.description}}</h4>
+  <div class="items">
+    {{#each list.items}}
+      <h2>{{headline}}</h2>
+      <p>{{description}}</p>
+    {{/each}}
+  </div>
+</template>

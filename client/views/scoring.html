@@ -1,0 +1,13 @@
+<template name="scoring">
+<!-- if current item - display current item and scoring input -->
+  {{#if currentItem}}
+    <h2>{{currentItem.headline}}</h2>
+    <p>{{currentItem.description}}</p>
+    <p>SCORE HERE</p>
+    <p><a href="/lists/{{list.hash}}/score/{{nextItemNum}}" class="btn btn-default">next</a></p>
+<!-- else - display list welcome and rapid registrationi -->
+  {{else}}
+    Welcome to the list. {{list.headline}}
+    <p><a href="/lists/{{list.hash}}/score/0" class="btn btn-default">go</a></p>
+  {{/if}}
+</template>
