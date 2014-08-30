@@ -26,3 +26,4 @@ Prioritize lists together in real time.
 * iron:router
 * mrt:accounts-ui-bootstrap-3
 * sacha:spinner
+* jquery

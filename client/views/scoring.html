@@ -4,6 +4,9 @@
   <hr />
   SCORES HERE
   <hr />
+  {{#unless isFirstItem}}
+    <a href="/lists/{{list.hash}}/score/{{prevOrder}}" class="btn btn-default">PREV</a>
+  {{/unless}}
   {{#if isLastItem}}
     <a href="/lists/{{list.hash}}/finish" class="btn btn-default">FINISH</a>
   {{else}}

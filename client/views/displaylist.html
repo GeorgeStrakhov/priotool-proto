@@ -2,5 +2,10 @@
   <h1>{{list.name}}</h1>
   <h4>{{list.description}}</h4>
   <hr />
-  <a href="/lists/{{list.hash}}/score/1" class="btn btn-default">START SCORING</a>
+  {{#unless currentUser}}
+    <h4>Please, introduce yourself</h4>
+    <input type="text" placeholder="John Smith" name="newUserName" id="newUserNameInput" />
+    <hr />
+  {{/unless}}
+  <a href="/lists/{{list.hash}}/score/1" id="startScoringButton" class="btn btn-default">START SCORING</a>
 </template>

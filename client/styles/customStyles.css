@@ -2,3 +2,11 @@
   padding: 15px;
   padding-top: 60px;
 }
+
+#errorContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+}
