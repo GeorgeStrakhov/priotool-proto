@@ -33,6 +33,11 @@ Template.displaylist.events({
 
 function addParticipantToList(listId) {
   var user = Meteor.user();
+  var already = Listparticipants.findOne({
+    list: listId,
+    user: user._id
+  });
+  if(already) return;
   Listparticipants.insert({
     list: listId,
     user: user._id,
