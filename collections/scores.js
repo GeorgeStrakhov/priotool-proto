@@ -15,6 +15,5 @@ function ownAndOnlyScore(userId, doc) {
     user: doc.user
   });
   if(oldScore && (oldScore._id !== doc._id)) return false;
-  console.log(arguments);
   return true;
 }

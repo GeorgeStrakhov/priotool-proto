@@ -4,6 +4,7 @@ Template.displaylist.events({
     var list = this.list;
     //if we have a user => just go to scoring
     if(Meteor.user()) {
+      addParticipantToList(list._id);
       Router.go('scoring', {listHash: list.hash, itemOrder: 1});
       return;
     }
@@ -16,15 +17,29 @@ Template.displaylist.events({
     Accounts.createUser(
       {
         username: userName,
-        password: 'password'
+        password: Meteor.uuid()
       },
       function(error) {
       if (error) {
         // display the error to the user
         throwError(error.reason);
       } else {
+        addParticipantToList(list._id);
         Router.go('scoring', {listHash: list.hash, itemOrder: 1});
       }
     });
   }
 });
+
+function addParticipantToList(listId) {
+  var user = Meteor.user();
+  Listparticipants.insert({
+    list: listId,
+    user: user._id,
+    username: user.username
+  },function(error){
+    if(error) {
+      throwError(error.reason)
+    }
+  });
+}

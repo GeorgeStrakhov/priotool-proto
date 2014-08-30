@@ -1,1 +1,1 @@
-Items = new Meteor.Collection('items');
+Lists = new Meteor.Collection('lists');

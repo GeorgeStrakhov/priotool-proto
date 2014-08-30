@@ -2,7 +2,16 @@
   {{#if currentUser}}
     <a href="/lists/{{list.hash}}/score/1" class="btn btn-default">change your mind</a>
   {{/if}}
-  <h1>Results for {{list.name}}:</h1>
+  <h1>{{list.name}}</h1>
+  <hr />
+  <h2>Participants:</h2>
+  <ul>
+    {{#each listParticipants}}
+      <li>{{username}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Results:</h2>
   <table class="table table-striped">
     <thead>
       <tr>

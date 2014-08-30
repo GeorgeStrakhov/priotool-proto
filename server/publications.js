@@ -3,6 +3,15 @@ Meteor.publish('listInfo', function(listHash) {
   return Lists.find({hash: listHash});
 });
 
+//publish listParticipants
+Meteor.publish('listParticipants', function(listHash) {
+  var list = Lists.findOne({hash: listHash});
+  if(!list) return null;
+  return Listparticipants.find({
+    list: list._id
+  });
+});
+
 //publish listItems
 Meteor.publish('listItems', function(listHash) {
   var list = Lists.findOne({hash: listHash});

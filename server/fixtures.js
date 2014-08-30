@@ -1,8 +1,11 @@
 //insert fixture user
 if(Meteor.users.find().count() === 0) {
-  var testUser1 = Meteor.users.insert({});
-  var testUser2 = Meteor.users.insert({});
-  var testUser3 = Meteor.users.insert({});
+  var testUser1 = Meteor.users.insert({username: "Ivanov"});
+  var tU1 = Meteor.users.findOne(testUser1);
+  var testUser2 = Meteor.users.insert({username: "Petrov"});
+  var tU2 = Meteor.users.findOne(testUser2);
+  var testUser3 = Meteor.users.insert({username: "Sidorov"});
+  var tU3 = Meteor.users.findOne(testUser3);
 }
 
 //insert fixture list
@@ -20,7 +23,26 @@ if (Lists.find().count() === 0) {
         name: "criteria 2"
       }
     ],
-    status: "active"
+    isActive: true
+  });
+}
+
+//insert fixture listparticipants
+if(Listparticipants.find().count() === 0) {
+  Listparticipants.insert({
+    list: testList,
+    user: testUser1,
+    username: tU1.username
+  });
+  Listparticipants.insert({
+    list: testList,
+    user: testUser2,
+    username: tU2.username
+  });
+  Listparticipants.insert({
+    list: testList,
+    user: testUser3,
+    username: tU3.username
   });
 }
 
