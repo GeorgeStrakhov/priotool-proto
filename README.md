@@ -9,15 +9,20 @@ Prioritize lists together in real time.
 5. They put their name in and start rating items one by one
 6. You see results in real time on your screen
 
+## Data Structure:
+* Users
+* Lists (belong to users)
+* Items (belong to lists)
+* Scores (belong to items & users)
+
 ## Technology stack
 * meteor
 * bootstrap
 
 ## Meteor Packages used:
-* autopublish
 * standard-app-packages
-* insecure
 * mrt:bootstrap-3
 * accounts-password
 * iron:router
 * mrt:accounts-ui-bootstrap-3
+* sacha:spinner
