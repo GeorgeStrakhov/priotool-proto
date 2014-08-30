@@ -2,7 +2,16 @@
   <h2>{{item.headline}}</h2>
   <p>{{item.description}}</p>
   <hr />
-  SCORES HERE
+  <h2>Your Score:</h2>
+  <ul>
+    {{#each userItemScores}}
+      <li>
+      <p>
+      {{criteriaName}} - <input type="number" min="0" max="10" value="{{score}}" name="criteriaInput---{{criteriaKey}}---{{itemId}}"/>
+      </p>
+      </li>
+    {{/each}}
+  </ul>
   <hr />
   {{#unless isFirstItem}}
     <a href="/lists/{{list.hash}}/score/{{prevOrder}}" class="btn btn-default">PREV</a>
