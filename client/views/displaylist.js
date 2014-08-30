@@ -10,7 +10,7 @@ Template.displaylist.events({
     //else we need to create the user on the spot
     var userName = $('#newUserNameInput').val();
     if(!userName) {
-      throwError('Username can\'t be blank!');
+      throwError('Sorry, anonymous scoring is not allowed!');
       return;
     }
     Accounts.createUser(
