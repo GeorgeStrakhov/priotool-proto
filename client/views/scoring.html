@@ -4,5 +4,9 @@
   <hr />
   SCORES HERE
   <hr />
-  <a href="/list/{{list.hash}}/score/{{nextOrder}}" class="btn btn-default">NEXT</a>
+  {{#if isLastItem}}
+    <a href="/lists/{{list.hash}}/finish" class="btn btn-default">FINISH</a>
+  {{else}}
+    <a href="/lists/{{list.hash}}/score/{{nextOrder}}" class="btn btn-default">NEXT</a>
+  {{/if}}
 </template>
