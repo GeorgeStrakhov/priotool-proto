@@ -42,6 +42,7 @@ Meteor.methods({
     //insert dummy items
     Items.insert({
       list: result.newListId,
+      owner: userId,
       order: 1,
       headline: "Great idea 1",
       description: "Great idea 1 long description"
@@ -49,6 +50,7 @@ Meteor.methods({
 
     Items.insert({
       list: result.newListId,
+      owner: userId,
       order: 2,
       headline: "Great idea 2",
       description: "Great idea 2 long description"

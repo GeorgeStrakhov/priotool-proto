@@ -30,10 +30,8 @@ Prioritize lists together in real time.
 * jquery
 
 ## To Do
-* Create list (step 1 -> registration, hash, name, description, criteria)
-    * check that there is a user logged in before creating a list
-* Edit list (step 2 -> hash, name, description, criteria, isActive)
-* My lists
+* Edit list (step 2 -> criteria, items)
+* My lists (switch isActive, view results, if no scores yet - edit scoring && items??). later-> clone list
 * security rules
 * List.isActive (on/off switch & associated behavior)
 * Results redo:
@@ -48,6 +46,7 @@ Prioritize lists together in real time.
 ## Done
 * Users
 * Lists
+* Create list
 * Items
 * Scoring
 * Results display

@@ -1,4 +1,56 @@
 <template name="editlist">
-  <h1>{{list.name}}</h1>
-  <h4>{{list.description}}</h4>
+  <form class="form-horizontal" role="form">
+
+      <h3>List:</h3>
+      <!-- list name -->
+      <div class="form-group">
+        <label for="list---{{list._id}}---name" class="col-sm-2 control-label">List Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control autosave" id="list---{{list._id}}---name" placeholder="Some Great List" value="{{list.name}}">
+        </div>
+      </div>
+
+      <!-- list description -->
+      <div class="form-group">
+        <label for="list---{{list._id}}---description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control autosave" id="list---{{list._id}}---description">{{list.description}}</textarea>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- list criteria -->
+      <h3>Rating Criteria:</h3>
+      {{#if noScoresYet}}
+      <div class="form-group form-group-options">
+      {{#each list.criteria}}
+        <div class="input-group input-group-option input-group-option ">
+          <input type="text" class="form-control criteriaInput" value="{{this.name}}">
+          <span class="input-group-addon input-group-addon-remove removeCriteria">
+            <span class="glyphicon glyphicon-remove"></span>
+          </span>
+        </div>
+      {{/each}}
+        <div class="input-group input-group-option input-group-option col-sm-12 inputCriteriaLast">
+          <input type="text" class="form-control criteriaInput" value="" placeholder="next criteria">
+          <span class="input-group-addon input-group-addon-remove removeCriteria">
+            <span class="glyphicon glyphicon-remove"></span>
+          </span>
+        </div>
+      </div>
+      {{else}}
+      <p><em>NB! You can't change criteria any more, since omebody started rating already.</em></p>
+        <ul>
+          {{#each list.criteria}}
+          <li>{{this.name}}</li>
+          {{/each}}
+        </ul>
+      {{/if}}
+      
+      <hr />
+
+      <a href="/lists/{{list.hash}}/results" class="btn btn-primary">START SCORING</a>
+
+  </form>
 </template>

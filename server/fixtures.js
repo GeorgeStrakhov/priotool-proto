@@ -50,18 +50,21 @@ if(Listparticipants.find().count() === 0) {
 if(Items.find().count() === 0) {
   var testItem1 = Items.insert({
     list: testList,
+    owner: testUser1,
     order: 3,
     headline: "idea 3",
     description: "idea 3 description"
   });
   var testItem2 = Items.insert({
     list: testList,
+    owner: testUser1,
     order: 1,
     headline: "idea 1",
     description: "idea 1 description"
   });
   var testItem3 = Items.insert({
     list: testList,
+    owner: testUser1,
     order: 2,
     headline: "idea 2 blah",
     description: "idea 2 description"

@@ -10,3 +10,32 @@
   width: 100%;
   z-index: 2000;
 }
+
+div.input-group-option {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.inputCriteriaLast {
+  margin: 0 !important;
+  width: 100%;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+div.input-group-option:last-child span.input-group-addon-remove{
+    display: none;
+}
+
+div.input-group-option:last-child input.form-control{
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+div.input-group-option span.input-group-addon-remove{
+  cursor: pointer;
+}
+
+div.input-group-option{
+  margin-bottom: 3px;
+}

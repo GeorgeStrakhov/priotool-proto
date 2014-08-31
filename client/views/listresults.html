@@ -1,5 +1,5 @@
 <template name="listresults">
-  {{#if currentUser}}
+  {{#if currentUserIsParticipant}}
     <a href="/lists/{{list.hash}}/score/1" class="btn btn-default">change your mind</a>
   {{/if}}
   <h1>{{list.name}}</h1>
