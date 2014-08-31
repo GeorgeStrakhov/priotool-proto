@@ -33,7 +33,6 @@ Prioritize lists together in real time.
 * Create list (step 1 -> registration, hash, name, description, criteria)
     * check that there is a user logged in before creating a list
 * Edit list (step 2 -> hash, name, description, criteria, isActive)
-    * don't allow non-owners or non-users to access edit
 * My lists
 * security rules
 * List.isActive (on/off switch & associated behavior)

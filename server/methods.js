@@ -1,19 +1,26 @@
 Meteor.methods({
   createNewUserList : function(newListData) {
+    if(!this.userId) {
+      throw new Meteor.Error(403, 'You are not logged in. Please logged in.'); 
+      return;
+    }
     var userId = this.userId;
     var result = {};
     if(!newListData.name) {
       throw new Meteor.Error(403, 'List name can\'t be blank.'); 
+      return;
     }
     if(!newListData.hash) {
       throw new Meteor.Error(403, 'Please choose a URL');
+      return;
     }
     //check if a list with this hash already exists.
     var already = Lists.findOne({hash: newListData.hash});
     if(already) {
       throw new Meteor.Error(403, 'List with this URL already exists. Please choose a different one.');
+      return;
     }
-    var hash = newListData.hash.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    var hash = newListData.hash.replace(/[^a-z0-9]/gi, '-').toLowerCase();
     result.hash = hash;
     //insert new list with dummy criteria
     result.newListId = Lists.insert({
