@@ -1,3 +1,53 @@
 <template name="buildlist">
-  <h1>building a list here...</h1>
+
+<form class="form-horizontal" role="form">
+  {{#unless currentUser}}
+    <h2>Please introduce yourself first:</h2>
+      <div class="form-group">
+        <label for="inputUserName" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputUserName" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+    <hr />
+  {{/unless}}
+
+  <h2>Name and describe your list:</h2>
+    <div class="form-group">
+      <label for="inputListName" class="col-sm-2 control-label">List name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputListName" placeholder="List of amazing ideas...">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputListDescription" class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="3" name="listDescription" id="inputListDescription"></textarea>
+      </div>
+    </div>
+  <hr />
+
+  <h2>Choose your list's unique URL:</h2>
+    <div class="form-group">
+      <label for="inputListName" class="col-sm-2 control-label">{{MeteorUrl}}lists/</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputHash" placeholder="some-good-url">
+      </div>
+    </div>
+  <hr />
+
+  <!-- submit -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Create a new list</button>
+    </div>
+  </div>
+
+</form>
 </template>

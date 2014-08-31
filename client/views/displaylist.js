@@ -31,7 +31,7 @@ Template.displaylist.events({
   }
 });
 
-function addParticipantToList(listId) {
+var addParticipantToList = function(listId) {
   var user = Meteor.user();
   var already = Listparticipants.findOne({
     list: listId,
