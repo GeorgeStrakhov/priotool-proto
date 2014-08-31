@@ -30,7 +30,7 @@ Prioritize lists together in real time.
 * jquery
 
 ## To Do
-* Edit list (step 2 -> criteria, items)
+* BUG: no 404 when valid url but invalid listhash
 * My lists (switch isActive, view results, if no scores yet - edit scoring && items??). later-> clone list
 * security rules
 * List.isActive (on/off switch & associated behavior)
@@ -47,6 +47,7 @@ Prioritize lists together in real time.
 * Users
 * Lists
 * Create list
+* Edit list (step 2 -> criteria, items)
 * Items
 * Scoring
 * Results display
