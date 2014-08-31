@@ -35,6 +35,8 @@ Prioritize lists together in real time.
 * My lists
 * security rules
 * List.isActive (on/off switch & associated behavior)
+* Results redo:
+  view various criteria separately...
 * Styling
 * Branding
 * Mobile test
