@@ -14,6 +14,13 @@ Template.editlist.events({
         }
       });
     }
+    if(inputObjData[0] == 'item') {
+      Items.update({_id: id}, {$set: updateObj}, function(error, result){
+        if(error) {
+          throwError(error.reason);
+        }
+      });
+    }
   },
   'blur .criteriaInput, keypress .criteriaInput': function(e, template) {
     if(e.type == "keypress") {
@@ -27,8 +34,19 @@ Template.editlist.events({
     var inputObj = $(e.target).closest('.input-group').find('input').first();
     inputObj.val('');
     updateListCriteria(templateData.list._id);
+  },
+  'click .itemAction': function(e, template) {
+    var button = $(e.target);
+    var action = button.attr('id').split('---')[1];
+    applyItemAction(action, this._id);
   }
 });
+
+var applyItemAction = function(action, id) {
+  if(action == 'delete') {
+    Items.remove(id);
+  }
+}
 
 var updateListCriteria = function(listId) {
   var newCriteria = [];

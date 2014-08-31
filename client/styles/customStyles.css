@@ -39,3 +39,9 @@ div.input-group-option span.input-group-addon-remove{
 div.input-group-option{
   margin-bottom: 3px;
 }
+
+.listItemActions {
+  display: inline-block;
+  float:right;
+  margin-bottom: 10px;
+}

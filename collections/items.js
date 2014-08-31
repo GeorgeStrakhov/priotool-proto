@@ -1,7 +1,12 @@
 Items = new Meteor.Collection('items');
 
 Items.allow({
-  update: function(userId, doc, fields, modifier) {
+  update: docOwner,
+  remove: docOwner,
+  insert: docOwner 
+});
+
+var docOwner = function(userId, doc) {
     if(!userId) {
       sayNo();
       return false;
@@ -11,9 +16,7 @@ Items.allow({
       return false;
     }
     return true;
-  }
-});
-
+};
 
 var sayNo = function() {
   throw new Meteor.Error(401, 'How dare you!');

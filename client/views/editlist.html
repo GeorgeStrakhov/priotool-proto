@@ -1,7 +1,7 @@
 <template name="editlist">
   <form class="form-horizontal" role="form">
 
-      <h3>List:</h3>
+      <h1>Edit your list:</h1>
       <!-- list name -->
       <div class="form-group">
         <label for="list---{{list._id}}---name" class="col-sm-2 control-label">List Name</label>
@@ -17,6 +17,33 @@
           <textarea class="form-control autosave" id="list---{{list._id}}---description">{{list.description}}</textarea>
         </div>
       </div>
+
+      <hr />
+
+      <!-- list items -->
+      <h3>List Items:</h3>
+        {{#each items}}
+          <div class="well">
+            <div class="listItemActions">
+              <button type="button" id="itemaction---delete---{{_id}}" class="btn btn-small btn-danger itemAction">&times;</button>
+              &nbsp;&nbsp;
+              <button type="button" class="btn btn-small btn-success"><span class="glyphicon glyphicon-arrow-up"></span></button>
+              <button type="button" class="btn btn-small btn-success"><span class="glyphicon glyphicon-arrow-down"></span></button>
+            </div>
+            <div class="form-group">
+              <label for="item---{{_id}}---headline" class="col-sm-2 control-label">Headline</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control autosave" id="item---{{_id}}---headline" placeholder="Your Great Idea" value="{{headline}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="item---{{_id}}---description" class="col-sm-2 control-label">Description</label>
+              <div class="col-sm-10">
+                <textarea class="form-control autosave" id="item---{{_id}}---description">{{description}}</textarea>
+              </div>
+            </div>
+          </div>        
+        {{/each}}
 
       <hr />
 
@@ -40,7 +67,7 @@
         </div>
       </div>
       {{else}}
-      <p><em>NB! You can't change criteria any more, since omebody started rating already.</em></p>
+      <p><em>NB! You can't change criteria any more, since somebody started rating already.</em></p>
         <ul>
           {{#each list.criteria}}
           <li>{{this.name}}</li>
