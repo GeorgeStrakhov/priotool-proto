@@ -1,0 +1,19 @@
+<template name="listinvite">
+  <h1>Invite your colleagues to start prioritizing!</h1>
+  <p>Just send this URL to them:</p>
+  <p>
+    <input type="text" class="form-control" value="{{listUrl}}" />
+  </p>
+  <hr />
+
+  <h2>People who joined already:</h2>
+  <ul>
+  {{#each listParticipants}}
+    <li>{{username}}</li>
+  {{/each}}
+  </ul>
+
+  <hr />
+
+  <a href="/lists/{{list.hash}}/results" class="btn btn-success">SEE RESULTS</a>
+</template>

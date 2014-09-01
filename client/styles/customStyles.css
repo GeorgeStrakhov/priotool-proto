@@ -41,7 +41,7 @@ div.input-group-option{
 }
 
 .listItemActions {
-  display: inline-block;
-  float:right;
+  display: block;
+  text-align: right;
   margin-bottom: 10px;
 }
