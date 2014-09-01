@@ -13,7 +13,11 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><a href="/create">Create a new list</a></li>
+          {{#if currentUser}}
+          <li><a href="/mylists">My lists</a></li>
+          {{/if}}
         </ul>
+        
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons }}
         </ul>

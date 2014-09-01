@@ -1,0 +1,12 @@
+<template name="mylists">
+  <h1>My Lists:</h1>
+  <ul>
+    {{#each myLists}}
+    <li>
+      <span>{{name}}</span>
+      - <a href="/lists/{{hash}}/edit">edit</a>
+      - <a href="/lists/{{hash}}/results">view results</a>
+    </li>
+    {{/each}}
+  </ul>
+</template>

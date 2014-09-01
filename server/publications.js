@@ -29,3 +29,8 @@ Meteor.publish('listScores', function(listHash) {
     list: list._id
   });
 });
+
+//publish userLists
+Meteor.publish('userLists', function(userId) {
+  return Lists.find({owner:userId});
+});
