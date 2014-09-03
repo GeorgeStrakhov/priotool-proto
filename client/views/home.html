@@ -1,7 +1,16 @@
 <template name="home">
-<h1>PrioTool</h1>
-<h3>Prioritize lists of anything together, in real time</h3>
-<br />
-<br />
-<a href="{{pathFor 'buildlist'}}" class="btn btn-primary">CREATE A NEW LIST</a>
+<div class="homescreen-all">
+  <div class="homescreen-inner text-center">
+    <div class="home-header">
+      <h1 class="text-capitalize">PRIOTOOL</h1>
+      <h3>Prioritize lists of anything together, in real time.</h3>
+    </div>
+    <br />
+    <br />
+    <a href="{{pathFor 'buildlist'}}" class="btn btn-lg btn-success text-capitalize">Create a new list</a>
+  </div>
+  <div class="fixedFooter">
+    <a class="whiteLink" href="http://en.wikipedia.org/wiki/Pollice_verso" target="_blank">Pollice Verso painting by Jean-Léon Gérôme</a>
+  </div>
+</div>
 </template>

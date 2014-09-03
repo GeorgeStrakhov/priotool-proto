@@ -1,9 +1,10 @@
 <template name="scoring">
+<div class="text-center">
   <h2>{{item.headline}}</h2>
   <p>{{item.description}}</p>
   <hr />
   <h2>Your Score:</h2>
-  <ul>
+  <ul class="list-unstyled">
     {{#each userItemScores}}
       <li>
       <p>
@@ -21,4 +22,5 @@
   {{else}}
     <a href="/lists/{{list.hash}}/score/{{nextOrder}}" class="btn btn-default">NEXT</a>
   {{/if}}
+</div>
 </template>

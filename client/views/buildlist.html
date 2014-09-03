@@ -1,5 +1,6 @@
 <template name="buildlist">
 
+<div class="row container">
 <form class="form-horizontal" role="form">
   {{#unless currentUser}}
     <h2 class="col-sm-offset-2 col-sm-10">Please introduce yourself first:</h2>
@@ -37,6 +38,7 @@
   <hr />
 
   <h2 class="col-sm-offset-2 col-sm-10">Choose your list's unique URL:</h2>
+  <p>This is the web address your rating participants need to go to in order to start ratin. Make it short and easy for participants to type in!</p>
     <div class="form-group">
       <label for="inputListName" class="col-sm-2 control-label">{{MeteorUrl}}lists/</label>
       <div class="col-sm-10">
@@ -48,11 +50,12 @@
   <!-- submit -->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">Create a new list</button>
+      <button type="submit" class="btn btn-lg btn-default">Create</button>
     </div>
   </div>
 
   {{/if}}
 
 </form>
+</div>
 </template>

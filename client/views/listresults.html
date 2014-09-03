@@ -1,17 +1,6 @@
 <template name="listresults">
-  {{#if currentUserIsParticipant}}
-    <a href="/lists/{{list.hash}}/score/1" class="btn btn-default">change your mind</a>
-  {{/if}}
-  <h1>{{list.name}}</h1>
+  <h2>{{list.name}} results:</h2>
   <hr />
-  <h2>Participants:</h2>
-  <ul>
-    {{#each listParticipants}}
-      <li>{{username}}</li>
-    {{/each}}
-  </ul>
-  <hr />
-  <h2>Results:</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -34,4 +23,19 @@
     <tbody>
     </tbody>
   </table>
+  <hr />
+  <h2>Who participated in the rating:</h2>
+  <ul>
+    {{#each listParticipants}}
+    <li>{{username}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  {{#if currentUserIsParticipant}}
+  <a href="/lists/{{list.hash}}/score/1" class="btn btn-default">change your mind</a>
+  {{else}}
+    {{#if currentUser}}
+    <a href="/lists/{{list.hash}}" class="btn btn-default">start rating yourself</a>
+    {{/if}}
+  {{/if}}
 </template>

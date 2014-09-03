@@ -1,11 +1,21 @@
 <template name="displaylist">
-  <h1>{{list.name}}</h1>
-  <h4>{{list.description}}</h4>
-  <hr />
+  <h1>Hello!</h1>
+  <h3>You are invited to prioritize {{list.name}}:</h3> 
+  <h4>You need to rate each item in the list (one by one) with the following criteria in mind:</h4>
+  <ul>
+    {{#each list.criteria}}
+      <li>{{name}} - on the scale of 1 to 10</li>
+    {{/each}}
+  </ul>
   {{#unless currentUser}}
-    <h4>Please, introduce yourself</h4>
-    <input type="text" placeholder="John Smith" name="newUserName" id="newUserNameInput" />
+  <hr />
+    <h4>Please, introduce yourself first:</h4>
+    <input type="text" class="form-control" placeholder="John Smith" name="newUserName" id="newUserNameInput" />
     <hr />
   {{/unless}}
-  <a href="/lists/{{list.hash}}/score/1" id="startScoringButton" class="btn btn-default">START SCORING</a>
+  <hr />
+  <p>Now you will see all the imems in the list one by one and will need to rate them according to the criteria above. Ready?</p>
+  <div>
+    <a href="/lists/{{list.hash}}/score/1" id="startScoringButton" class="btn btn-success btn-large text-capitalize">START RATING</a>
+  </div>
 </template>

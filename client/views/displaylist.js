@@ -11,13 +11,13 @@ Template.displaylist.events({
     //else we need to create the user on the spot
     var userName = $('#newUserNameInput').val();
     if(!userName) {
-      throwError('Sorry, anonymous scoring is not allowed!');
+      throwError('Sorry, anonymous sorting is not allowed!');
       return;
     }
     Accounts.createUser(
       {
         username: userName,
-        password: Meteor.uuid()
+        password: 'password'
       },
       function(error) {
       if (error) {

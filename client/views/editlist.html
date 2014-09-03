@@ -1,27 +1,8 @@
 <template name="editlist">
   <form class="form-horizontal" role="form">
 
-      <h1>Edit your list:</h1>
-      <!-- list name -->
-      <div class="form-group">
-        <label for="list---{{list._id}}---name" class="col-sm-2 control-label">List Name</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control autosave" id="list---{{list._id}}---name" placeholder="Some Great List" value="{{list.name}}">
-        </div>
-      </div>
-
-      <!-- list description -->
-      <div class="form-group">
-        <label for="list---{{list._id}}---description" class="col-sm-2 control-label">Description</label>
-        <div class="col-sm-10">
-          <textarea class="form-control autosave" id="list---{{list._id}}---description">{{list.description}}</textarea>
-        </div>
-      </div>
-
-      <hr />
-
       <!-- list items -->
-      <h3>List Items:</h3>
+      <h2>Add List Items for people to rate:</h2>
         {{#each items}}
           <div class="well">
             <div class="listItemActions">
@@ -44,12 +25,12 @@
             </div>
           </div>        
         {{/each}}
-        <button type="button" id="addNewItem" class="btn btn-success">add new item</button>
+        <button type="button" id="addNewItem" class="btn btn-success">add another item</button>
 
       <hr />
 
       <!-- list criteria -->
-      <h3>Rating Criteria:</h3>
+      <h2>Rating Criteria:</h2>
       {{#if noScoresYet}}
       <div class="form-group form-group-options">
       {{#each list.criteria}}
@@ -78,7 +59,7 @@
       
       <hr />
 
-      <a href="/lists/{{list.hash}}/invite" class="btn btn-primary">START SCORING</a>
+      <a href="/lists/{{list.hash}}/invite" class="btn btn-default btn-lg">START SCORING</a>
 
   </form>
 </template>
