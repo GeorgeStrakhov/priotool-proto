@@ -14,10 +14,10 @@
         <label for="inputPassword" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
           <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <hr />
+          <button type="button" class="btn btn-default" id="createAccountBtn">Create account</button>
         </div>
       </div>
-      <hr />
-      <button type="button" class="btn btn-default" id="createAccountBtn">Create account</button>
   {{/unless}}
 
   {{#if currentUser}}
@@ -32,19 +32,19 @@
       <label for="inputListDescription" class="col-sm-2 control-label">Description</label>
       <div class="col-sm-10">
         <textarea class="form-control" rows="3" name="listDescription" id="inputListDescription"></textarea>
+        <hr />
       </div>
     </div>
-  <hr />
 
   <h2 class="col-sm-offset-2 col-sm-10">Choose your list's unique URL:</h2>
-  <p>This is the web address your rating participants need to go to in order to start ratin. Make it short and easy for participants to type in!</p>
+  <p class="col-sm-offset-2 col-sm-10" style="padding-left: 2px;">This is the web address your rating participants need to go to in order to start ratin. Make it short and easy for participants to type in!</p>
     <div class="form-group">
-      <label for="inputListName" class="col-sm-2 control-label">{{MeteorUrl}}lists/</label>
-      <div class="col-sm-10">
+      <div class="col-sm-10 col-sm-offset-2">
+        <span>{{MeteorUrl}}lists/</span>
         <input type="text" class="form-control" id="inputHash" placeholder="some-good-url">
+        <hr />
       </div>
     </div>
-  <hr />
 
   <!-- submit -->
   <div class="form-group">
