@@ -46,6 +46,18 @@ body {
   color: #fff;
 }
 
+.lhbs-logo {
+  margin-top: 10px;
+}
+
+.main-headline {
+  font-weight: bold;
+}
+
+.lhbs-logo-image {
+  margin: 0 auto;
+}
+
 h2 {
   padding-left: 1px !important;
 }
