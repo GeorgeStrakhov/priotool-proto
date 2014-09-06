@@ -52,7 +52,7 @@ Template.editlist.events({
       owner: Meteor.userId(),
       order: newItemOrder,
       headline: "Brilliant Idea Headline",
-      description: "Brillian Idea Description"
+      description: "Brilliant Idea Description"
     });
   }
     
