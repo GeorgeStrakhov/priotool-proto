@@ -30,16 +30,12 @@ Prioritize lists together in real time.
 * jquery
 
 ## To Do
+* add LHBS logo
+* update password for autocreated users. prepopulate field
 * My lists (switch isActive, view results, if no scores yet - edit scoring && items??). later-> clone list
-* security rules
+* security rules - double-check
 * List.isActive (on/off switch & associated behavior)
-* Results redo:
-  view various criteria separately...
-* Styling
-* Branding
-* Mobile test
-* Domain & DNS (point to Meteor servers)
-* Deploy
+* Results redo view: view various criteria separately...
 * Full user scoring stats for the list owner (username -> item -> criteria -> scores)
 
 ## Done
@@ -49,5 +45,12 @@ Prioritize lists together in real time.
 * Edit list (step 2 -> criteria, items)
 * Items
 * Scoring
+* Scoring with sliders
 * Results display
 * List partiicpants
+* Deploy
+* Mobile test
+* Styling
+* Branding
+* Domain & DNS (point to Meteor servers)
+* update to 0.9.1

@@ -5,7 +5,7 @@ Template.scoringItemCriteria.rendered = function() {
   var inputField = self.$('input');
   inputField.slider();
   self.autorun(function() {
-    var userItemScore = Blaze.getCurrentData();
+    var userItemScore = Blaze.getData();
     recreateSlider(item.list, userItemScore, inputField);
   });
 };

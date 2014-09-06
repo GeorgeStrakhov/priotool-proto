@@ -9,12 +9,12 @@
       {{> scoringItemCriteria}} 
     {{/each}}
   {{#unless isFirstItem}}
-    <a href="/lists/{{list.hash}}/score/{{prevOrder}}" class="btn btn-default">PREV</a>
+    <a href="/lists/{{list.hash}}/score/{{prevOrder}}" class="btn btn-default btn-go btn-go-prev">PREV</a>
   {{/unless}}
   {{#if isLastItem}}
     <a href="/lists/{{list.hash}}/results" class="btn btn-default">FINISH</a>
   {{else}}
-    <a href="/lists/{{list.hash}}/score/{{nextOrder}}" class="btn btn-default">NEXT</a>
+    <a href="/lists/{{list.hash}}/score/{{nextOrder}}" class="btn btn-default btn-go btn-go-next">NEXT</a>
   {{/if}}
 </div>
 </template>
