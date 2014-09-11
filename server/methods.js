@@ -22,40 +22,67 @@ Meteor.methods({
     }
     var hash = newListData.hash.replace(/[^a-z0-9]/gi, '-').toLowerCase();
     result.hash = hash;
-    //insert new list with dummy criteria
-    result.newListId = Lists.insert({
+    //create dummy data
+    var newListObj = {
+      owner: userId,
+      hash: hash,
+      name: newListData.name,
+      description: newListData.description,
+      criteria: [
+        {
+          name: "Important"
+        },
+        {
+          name: "Urgent"
+        }
+      ],
+      isActive: true
+    };
+
+    var items = [
+      {
         owner: userId,
-        hash: hash,
-        name: newListData.name,
-        description: newListData.description,
-        criteria: [
-          {
-            name: "Important"
-          },
-          {
-            name: "Urgent"
-          }
-        ],
-        isActive: true
-    });
+        order: 1,
+        headline: "Great idea 1",
+        description: "Great idea 1 long description"
+      },
+      {
+        owner: userId,
+        order: 2,
+        headline: "Great idea 2",
+        description: "Great idea 2 long description"
+      }
+    ];
 
-    //insert dummy items
-    Items.insert({
-      list: result.newListId,
-      owner: userId,
-      order: 1,
-      headline: "Great idea 1",
-      description: "Great idea 1 long description"
-    });
+    //check if we are cloning from another list
+    if(newListData.cloneFrom) {
+      var cloneFromList = Lists.findOne(newListData.cloneFrom);
+      if(cloneFromList) {
+        newListObj.criteria = cloneFromList.criteria;
+        items = getItemsFromList(cloneFromList._id);
+      }
+    }
 
-    Items.insert({
-      list: result.newListId,
-      owner: userId,
-      order: 2,
-      headline: "Great idea 2",
-      description: "Great idea 2 long description"
+    //insert new list
+    result.newListId = Lists.insert(newListObj);
+
+    //insert items
+    _.each(items, function(item) {
+      item.list = result.newListId;
+      Items.insert(item);
     });
 
     return result;
   }
 });
+
+var getItemsFromList = function(listId) {
+  var allItems = Items.find({list: listId}).fetch();
+  var readyItems = [];
+  _.each(allItems, function(item) {
+    delete(item._id);
+    delete(item.listId);
+    readyItems.push(item);
+  });
+  return readyItems;
+};

@@ -28,9 +28,10 @@ Prioritize lists together in real time.
 * mrt:accounts-ui-bootstrap-3
 * sacha:spinner
 * jquery
+* underscore
 
 ## To Do
-* add LHBS logo
+* 1-7 instead of 1-10
 * update password for autocreated users. prepopulate field
 * My lists (switch isActive, view results, if no scores yet - edit scoring && items??). later-> clone list
 * security rules - double-check
@@ -39,6 +40,7 @@ Prioritize lists together in real time.
 * Full user scoring stats for the list owner (username -> item -> criteria -> scores)
 
 ## Done
+* clone list (without rating)
 * Users
 * Lists
 * Create list
@@ -53,4 +55,5 @@ Prioritize lists together in real time.
 * Styling
 * Branding
 * Domain & DNS (point to Meteor servers)
+* add LHBS logo
 * update to 0.9.1

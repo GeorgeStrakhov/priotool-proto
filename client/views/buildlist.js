@@ -6,6 +6,11 @@ Template.buildlist.events({
     newList.hash = $('#inputHash').val();
     newList.name = $('#inputListName').val();
     newList.description = $('#inputListDescription').val();
+    //determine if we are cloning
+    newList.cloneFrom = false;
+    if (Meteor.isClient && window.location.search) {
+      newList.cloneFrom = window.location.search.split('=')[1];
+    }
     Meteor.call('createNewUserList', newList, function(error, result){
       if(error) {
         throwError(error.reason);
