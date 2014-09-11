@@ -31,7 +31,7 @@ Prioritize lists together in real time.
 * underscore
 
 ## To Do
-* 1-7 instead of 1-10
+* BUG: iphone safary click button twice on the pages where range slider is present
 * update password for autocreated users. prepopulate field
 * My lists (switch isActive, view results, if no scores yet - edit scoring && items??). later-> clone list
 * security rules - double-check
@@ -44,6 +44,7 @@ Prioritize lists together in real time.
 * Users
 * Lists
 * Create list
+  * 1-7 instead of 1-10
 * Edit list (step 2 -> criteria, items)
 * Items
 * Scoring
