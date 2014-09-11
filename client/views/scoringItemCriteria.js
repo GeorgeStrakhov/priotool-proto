@@ -6,6 +6,9 @@ Template.scoringItemCriteria.rendered = function() {
   inputField.slider();
   self.autorun(function() {
     var userItemScore = Blaze.getData();
+    if(!userItemScore || userItemScore == 0) {
+      userItemScore = 1;
+    }
     recreateSlider(item.list, userItemScore, inputField);
   });
 };
@@ -19,11 +22,12 @@ var recreateSlider = function(listId, userItemScore, inputField) {
   //create new one
   inputField.slider();
   //set correct value
-  inputField.slider('setValue', userItemScore.score);
+  var currentItemScore = (userItemScore.score) ? userItemScore.score : 1;
+  inputField.slider('setValue', currentItemScore);
   //attach listener
   inputField.on('slideStop', function(e) {
     if(!e.value) {
-      e.value = 0;
+      e.value = 1;
     }
     var newUserScores = [];
     $('input').each(function(k,v) {
