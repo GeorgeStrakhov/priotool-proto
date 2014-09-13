@@ -1,12 +1,23 @@
 <template name="listresults">
   <h2>{{list.name}} results:</h2>
+  <p>Sort by:</p>
+    <select class="form-control selectResultView">
+      <option value="total">Total Score</option>  
+      {{#each criteria}}
+      <option value="{{index}}" selected="{{isSelected}}">{{name}}</option>  
+      {{/each}}
+    </select>
   <hr />
   <table class="table table-striped">
     <thead>
       <tr>
         <th>item</th>
         {{#each criteria}}
-          <th>{{name}}</th>
+          <th>
+            <span class="{{#if isSelected}}underscored{{/if}}">
+              {{name}}
+            </span>
+          </th>
         {{/each}}
         <th>total</th>
       </tr>

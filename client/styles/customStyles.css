@@ -58,6 +58,10 @@ body {
   margin: 0 auto;
 }
 
+.underscored {
+  text-decoration: underline;
+}
+
 h2 {
   padding-left: 1px !important;
 }
